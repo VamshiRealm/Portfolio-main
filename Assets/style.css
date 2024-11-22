@@ -81,12 +81,7 @@ body.dark-theme {
     --smaller-font: 0.8rem;
   }
 }
-/* Main Image  */
-.home-img {
-  width: 30%;
-  height: 40;
-  border-radius: 10%;
-}
+
 /*CSS Reset*/
 * {
   box-sizing: border-box;
