@@ -1,29 +1,51 @@
 (function() {
-    emailjs.init("uep5cgh7IAXNiXdF6"); 
+    emailjs.init("tilOsuSIS4pohTK9z"); 
 })();
 
 function sendEmail(event) {
     event.preventDefault();
 
     const form = document.getElementById('contactForm');
-    const formData = new FormData(form);
 
-    const data = {
-        fname: formData.get('fname'),
-        lname: formData.get('lname'),
-        email: formData.get('email'),
-        phone: formData.get('phone'),
-        message: formData.get('message')
-    };
-
-    emailjs.send("service_bh6sb67", "template_c3yhtpz", data)
-        .then(function(response) {
-            alert('Message sent successfully!');
-        }, function(error) {
-            console.error('Error:', error);
-            alert('An error occurred while sending the message.');
-        });
+    emailjs.sendForm(
+        "service_dh5ef23", 
+        "template_z4tr8wc", 
+        form
+    )
+    .then(function(response) {
+        alert('Message sent successfully!');
+        form.reset();
+    }, function(error) {
+        console.error('Error:', error);
+        alert('An error occurred while sending the message.' + error.text);
+    });
 }
+// (function() {
+//     emailjs.init("uep5cgh7IAXNiXdF6"); 
+// })();
+
+// function sendEmail(event) {
+//     event.preventDefault();
+
+//     const form = document.getElementById('contactForm');
+//     const formData = new FormData(form);
+
+//     const data = {
+//         fname: formData.get('fname'),
+//         lname: formData.get('lname'),
+//         email: formData.get('email'),
+//         phone: formData.get('phone'),
+//         message: formData.get('message')
+//     };
+
+//     emailjs.send("service_bh6sb67", "template_c3yhtpz", data)
+//         .then(function(response) {
+//             alert('Message sent successfully!');
+//         }, function(error) {
+//             console.error('Error:', error);
+//             alert('An error occurred while sending the message.');
+//         });
+// }
 
 // Menu show or Hidden 
 
